@@ -1,6 +1,6 @@
 %define	name	dwm
 %define	version	4.7
-%define	rel	1
+%define	rel	2
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
@@ -56,6 +56,12 @@ cp -f %{SOURCE1} %{buildroot}/%{_datadir}/icons/
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
+
+%post
+%make_session
+
+%postun
+%make_session
 
 %files
 %defattr(-,root,root,755)
