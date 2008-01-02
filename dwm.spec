@@ -14,6 +14,7 @@ Group:		Graphical desktop/Other
 Summary:	A minimalist window manager for the X Window System
 Requires:	xterm
 BuildRequires:	X11-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 dwm is a dynamic window manager for X.
