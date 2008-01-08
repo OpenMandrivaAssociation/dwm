@@ -1,6 +1,6 @@
 %define	name	dwm
 %define	version	4.7
-%define	rel	2
+%define	rel	3
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
@@ -12,7 +12,7 @@ Source1:        %{name}.png
 License:	GPL
 Group:		Graphical desktop/Other
 Summary:	A minimalist window manager for the X Window System
-Requires:	xterm
+Requires:	xterm xmessage dwm-tools
 BuildRequires:	X11-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
