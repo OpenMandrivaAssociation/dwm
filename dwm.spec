@@ -1,6 +1,6 @@
 %define	name	dwm
-%define	version	4.7
-%define	rel	3
+%define	version	5.1
+%define	rel	1
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
