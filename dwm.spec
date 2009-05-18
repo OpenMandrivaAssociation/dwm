@@ -69,5 +69,5 @@ cp -f %{SOURCE1} %{buildroot}/%{_datadir}/icons/
 %config(noreplace) %{_sysconfdir}/X11/wmsession.d/40%{name}
 %{_bindir}/%{name}
 %{_bindir}/start%{name}
-%{_mandir}/man1/dwm.1.lzma
+%{_mandir}/man1/dwm.1*
 %{_datadir}/icons/%{name}.png
