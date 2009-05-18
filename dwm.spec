@@ -1,5 +1,5 @@
 %define	name	dwm
-%define	version	5.4
+%define	version	5.5
 %define	rel	1
 %define	release	%mkrel %{rel}
 
@@ -7,7 +7,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 URL:		http://www.suckless.org/wiki/dwm
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://code.suckless.org/dl/%{name}/%{name}-%{version}.tar.gz
 Source1:        %{name}.png
 License:	GPL
 Group:		Graphical desktop/Other
