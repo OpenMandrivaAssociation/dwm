@@ -1,5 +1,5 @@
 %define	name	dwm
-%define	version	5.7.1
+%define	version	5.7.2
 %define	rel	1
 %define	release	%mkrel %{rel}
 
@@ -9,7 +9,7 @@ Release:	%{release}
 URL:		http://www.suckless.org/wiki/dwm
 Source0:	http://code.suckless.org/dl/%{name}/%{name}-%{version}.tar.gz
 Source1:        %{name}.png
-License:	GPL
+License:	MIT
 Group:		Graphical desktop/Other
 Summary:	A minimalist window manager for the X Window System
 Requires:	xterm xmessage dwm-tools
