@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 URL:		http://www.suckless.org/wiki/dwm
 Source0:	http://code.suckless.org/dl/%{name}/%{name}-%{version}.tar.gz
-Source1:        %{name}.png
+Source1:	%{name}.png
 License:	MIT
 Group:		Graphical desktop/Other
 Summary:	A minimalist window manager for the X Window System
@@ -36,6 +36,7 @@ task performed. It is the little brother of wmii.
 
 # startfile
 %{__cat} > $RPM_BUILD_ROOT%{_bindir}/start%{name} << EOF
+#!/bin/sh
 exec %{_bindir}/%{name}
 EOF
 
