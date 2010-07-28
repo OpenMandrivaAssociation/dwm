@@ -1,13 +1,13 @@
 %define	name	dwm
-%define	version	5.7.2
+%define	version	5.8.2
 %define	rel	1
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-URL:		http://www.suckless.org/wiki/dwm
-Source0:	http://code.suckless.org/dl/%{name}/%{name}-%{version}.tar.gz
+URL:		http://dwm.suckless.org
+Source0:	http://dl.suckless.org/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 License:	MIT
 Group:		Graphical desktop/Other
