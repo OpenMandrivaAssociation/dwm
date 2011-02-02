@@ -1,6 +1,6 @@
 %define	name	dwm
 %define	version	5.8.2
-%define	rel	1
+%define	rel	2
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
@@ -13,7 +13,8 @@ License:	MIT
 Group:		Graphical desktop/Other
 Summary:	A minimalist window manager for the X Window System
 Requires:	xterm xmessage dwm-tools
-BuildRequires:	X11-devel
+BuildRequires:	libx11-devel
+BuildRequires:	libxinerama-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -28,11 +29,11 @@ task performed. It is the little brother of wmii.
 %setup -q
 
 %build
-%make
+%make CC="gcc %optflags %ldflags"
 
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
-%makeinstall_std DESTDIR=%{buildroot} PREFIX=/usr
+%makeinstall_std DESTDIR=%{buildroot} PREFIX=%_prefix
 
 # startfile
 %{__cat} > $RPM_BUILD_ROOT%{_bindir}/start%{name} << EOF
