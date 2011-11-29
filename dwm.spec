@@ -1,6 +1,6 @@
 %define	name	dwm
-%define	version	5.8.2
-%define	rel	2
+%define	version	5.9
+%define	rel	1
 %define	release	%mkrel %{rel}
 
 Name:		%{name}
@@ -29,23 +29,23 @@ task performed. It is the little brother of wmii.
 %setup -q
 
 %build
-%make CC="gcc %optflags %ldflags"
+%make CC="gcc %{optflags} %{ldflags}"
 
 %install
-%{__rm} -rf $RPM_BUILD_ROOT
-%makeinstall_std DESTDIR=%{buildroot} PREFIX=%_prefix
+%{__rm} -rf %{buildroot}
+%makeinstall_std DESTDIR=%{buildroot} PREFIX=%{_prefix}
 
 # startfile
-%{__cat} > $RPM_BUILD_ROOT%{_bindir}/start%{name} << EOF
+%{__cat} > %{buildroot}%{_bindir}/start%{name} << EOF
 #!/bin/sh
 exec %{_bindir}/%{name}
 EOF
 
-chmod 755 $RPM_BUILD_ROOT%{_bindir}/start%{name}
+chmod 755 %{buildroot}%{_bindir}/start%{name}
 
 # session file
-%{__install} -d $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmsession.d
-%{__cat} > $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmsession.d/40%{name} << EOF
+%{__install} -d %{buildroot}%{_sysconfdir}/X11/wmsession.d
+%{__cat} > %{buildroot}%{_sysconfdir}/X11/wmsession.d/40%{name} << EOF
 NAME=%{name}
 EXEC=%{_bindir}/start%{name}
 DESC=%{name} window manager
@@ -57,7 +57,7 @@ mkdir -p %{buildroot}/%{_datadir}/icons/
 cp -f %{SOURCE1} %{buildroot}/%{_datadir}/icons/
 
 %clean
-%{__rm} -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
 %post
 %make_session
