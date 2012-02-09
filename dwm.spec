@@ -1,21 +1,17 @@
-%define	name	dwm
-%define	version	5.9
-%define	rel	1
-%define	release	%mkrel %{rel}
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		dwm
+Version:	6.0
+Release:	%mkrel 1
 URL:		http://dwm.suckless.org
 Source0:	http://dl.suckless.org/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 License:	MIT
 Group:		Graphical desktop/Other
 Summary:	A minimalist window manager for the X Window System
-Requires:	xterm xmessage dwm-tools
+Requires:	xterm
+Requires:	xmessage
+Requires:	dwm-tools
 BuildRequires:	libx11-devel
 BuildRequires:	libxinerama-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 dwm is a dynamic window manager for X.
@@ -32,20 +28,20 @@ task performed. It is the little brother of wmii.
 %make CC="gcc %{optflags} %{ldflags}"
 
 %install
-%{__rm} -rf %{buildroot}
+%__rm -rf %{buildroot}
 %makeinstall_std DESTDIR=%{buildroot} PREFIX=%{_prefix}
 
 # startfile
-%{__cat} > %{buildroot}%{_bindir}/start%{name} << EOF
+%__cat > %{buildroot}%{_bindir}/start%{name} << EOF
 #!/bin/sh
 exec %{_bindir}/%{name}
 EOF
 
-chmod 755 %{buildroot}%{_bindir}/start%{name}
+%__chmod 755 %{buildroot}%{_bindir}/start%{name}
 
 # session file
-%{__install} -d %{buildroot}%{_sysconfdir}/X11/wmsession.d
-%{__cat} > %{buildroot}%{_sysconfdir}/X11/wmsession.d/40%{name} << EOF
+%__install -d %{buildroot}%{_sysconfdir}/X11/wmsession.d
+%__cat > %{buildroot}%{_sysconfdir}/X11/wmsession.d/40%{name} << EOF
 NAME=%{name}
 EXEC=%{_bindir}/start%{name}
 DESC=%{name} window manager
@@ -53,11 +49,11 @@ SCRIPT:
 exec %{_bindir}/start%{name}
 EOF
 
-mkdir -p %{buildroot}/%{_datadir}/icons/
-cp -f %{SOURCE1} %{buildroot}/%{_datadir}/icons/
+%__mkdir_p %{buildroot}%{_datadir}/icons/
+%__cp -f %{SOURCE1} %{buildroot}%{_datadir}/icons/
 
 %clean
-%{__rm} -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %post
 %make_session
