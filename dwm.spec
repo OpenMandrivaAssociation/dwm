@@ -1,6 +1,6 @@
 Name:		dwm
 Version:	6.0
-Release:	%mkrel 1
+Release:	2
 URL:		http://dwm.suckless.org
 Source0:	http://dl.suckless.org/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
@@ -12,6 +12,8 @@ Requires:	xmessage
 Requires:	dwm-tools
 BuildRequires:	libx11-devel
 BuildRequires:	libxinerama-devel
+
+%define debug_package %{nil}
 
 %description
 dwm is a dynamic window manager for X.
@@ -28,7 +30,6 @@ task performed. It is the little brother of wmii.
 %make CC="gcc %{optflags} %{ldflags}"
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std DESTDIR=%{buildroot} PREFIX=%{_prefix}
 
 # startfile
@@ -51,15 +52,6 @@ EOF
 
 %__mkdir_p %{buildroot}%{_datadir}/icons/
 %__cp -f %{SOURCE1} %{buildroot}%{_datadir}/icons/
-
-%clean
-%__rm -rf %{buildroot}
-
-%post
-%make_session
-
-%postun
-%make_session
 
 %files
 %defattr(-,root,root,755)
