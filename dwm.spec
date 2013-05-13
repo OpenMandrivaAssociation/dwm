@@ -10,8 +10,8 @@ Summary:	A minimalist window manager for the X Window System
 Requires:	xterm
 Requires:	xmessage
 Requires:	dwm-tools
-BuildRequires:	libx11-devel
-BuildRequires:	libxinerama-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xinerama)
 
 %define debug_package %{nil}
 
