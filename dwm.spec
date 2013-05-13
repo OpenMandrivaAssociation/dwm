@@ -1,6 +1,6 @@
 Name:		dwm
 Version:	6.0
-Release:	2
+Release:	3
 URL:		http://dwm.suckless.org
 Source0:	http://dl.suckless.org/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
