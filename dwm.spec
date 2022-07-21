@@ -2,8 +2,8 @@
 
 Summary:	A minimalist window manager for the X Window System
 Name:		dwm
-Version:	6.0
-Release:	5
+Version:	6.3
+Release:	1
 License:	MIT
 Group:		Graphical desktop/Other
 Url:		http://dwm.suckless.org
