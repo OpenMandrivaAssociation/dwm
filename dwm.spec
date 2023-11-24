@@ -9,6 +9,7 @@ Group:		Graphical desktop/Other
 Url:		http://dwm.suckless.org
 Source0:	http://dl.suckless.org/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
+BuildRequires:  pkgconfig(xft)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xinerama)
 Requires:	dwm-tools
