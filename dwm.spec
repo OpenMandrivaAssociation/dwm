@@ -2,12 +2,12 @@
 
 Summary:	A minimalist window manager for the X Window System
 Name:		dwm
-Version:	6.4
+Version:	6.5
 Release:	1
 License:	MIT
 Group:		Graphical desktop/Other
-Url:		http://dwm.suckless.org
-Source0:	http://dl.suckless.org/%{name}/%{name}-%{version}.tar.gz
+Url:		https://dwm.suckless.org
+Source0:	https://dl.suckless.org/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 BuildRequires:  pkgconfig(xft)
 BuildRequires:	pkgconfig(x11)
